@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive GTA 5 Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        /* Set the size of the map */
+        #map {
+            width: 100%;
+            height: 600px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>GTA 5 Interactive Map</h1>
+    <div id="map"></div> <!-- This is where the map will go -->
+
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Create the map and set its center and zoom level
+        var map = L.map('map', {
+            crs: L.CRS.Simple, // Use Simple CRS for image-based maps (no tiles)
+            center: [500, 500], // Adjust the coordinates to fit your image size
+            zoom: 3 // Zoom level
+        });
+
+        // Path to your GTA 5 static map image
+        var imageUrl = 'GTAV-Map.jpeg';  // Replace with your actual map image path
+        var imageBounds = [[0, 0], [1000, 1000]];  // The bounds of your image (top-left and bottom-right corners)
+
+        // Add the image overlay (GTA 5 map image)
+        L.imageOverlay(imageUrl, imageBounds).addTo(map);
+
+        // Adjust the map to fit the image size
+        map.fitBounds(imageBounds);
+
+
+        // Marker 1: Garlic & Rosemary
+        var marker1 = L.marker([694.804688, 690.187500]).addTo(map);
+        marker1.bindPopup(`
+            <b>Garlic & Rosemary</b><br>
+            <img src="garlic-rosemary.jpg" alt="Garlic & Rosemary" width="100%">
+        `);
+
+        // Marker 2: Mint & Basil
+        var marker2 = L.marker([699.054688, 686.000000]).addTo(map);
+        marker2.bindPopup(`
+            <b>Mint & Basil</b><br>
+            <img src="mint-basil.jpg" alt="Mint & Basil" width="100%">
+        `);
+
+        // Marker 3: Vanilla Bean & Cinnamon
+        var marker3 = L.marker([676.181334, 662.455811]).addTo(map);
+        marker3.bindPopup(`
+            <b>Vanilla Bean & Cinnamon</b><br>
+            <img src="vanilla-cinnamon.jpg" alt="Vanilla Bean & Cinnamon" width="100%">
+        `);
+        
+        // Marker 4: Sugar & Flour
+        var marker4 = L.marker([710.464844, 599.000000]).addTo(map);
+        marker4.bindPopup(`
+            <b>Sugar & Flour</b><br>
+            <img src="sugar-flour.jpg" alt="Sugar & Flour" width="100%">
+        `);
+
+        // Marker 5: Peppers & Seed Vegetables
+        var marker5 = L.marker([712.558594, 608.000000]).addTo(map);
+        marker5.bindPopup(`
+            <b>Peppers & Seed Vegetables</b><br>
+            <img src="peppers-seed-vegetables.jpg" alt="Peppers & Seed Vegetables" width="100%">
+        `);
+
+        // Marker 6: Leafy Greens & Root Vegetables
+        var marker6 = L.marker([717.714844, 621.531250]).addTo(map);
+        marker6.bindPopup(`
+            <b>Leafy Greens & Root Vegetables</b><br>
+            <img src="leafy-greens-root-vegetables.jpg" alt="Leafy Greens & Root Vegetables" width="100%">
+        `);
+
+        // Marker 7: Stone Fruit & Citrus Fruits
+        var marker7 = L.marker([741.246094, 631.031250]).addTo(map);
+        marker7.bindPopup(`
+            <b>Stone Fruit & Citrus Fruits</b><br>
+            <img src="stone-fruit-citrus.jpg" alt="Stone Fruit & Citrus Fruits" width="100%">
+        `);
+
+        // Marker 8: Chicken
+        var marker8 = L.marker([741.246094, 631.031250]).addTo(map);
+        marker8.bindPopup(`
+            <b>Chicken</b><br>
+            <img src="chicken.jpg" alt="Chicken" width="100%">
+        `);
+
+        // Marker 9: Berries & Vine Fruit
+        var marker9 = L.marker([712.054688, 663.437500]).addTo(map);
+        marker9.bindPopup(`
+            <b>Berries & Vine Fruit</b><br>
+            <img src="berries-vine-fruit.jpg" alt="Berries & Vine Fruit" width="100%">
+        `);
+
+        // Marker 10: Beef & Milk
+        var marker10 = L.marker([707.367188, 656.687500]).addTo(map);
+        marker10.bindPopup(`
+            <b>Beef & Milk</b><br>
+            <img src="beef-milk.jpg" alt="Beef & Milk" width="100%">
+        `);
+
+        // Marker 11: Soda, Salt & Chocolate
+        var marker11 = L.marker([626.904297, 616.765625]).addTo(map);
+        marker11.bindPopup(`
+            <b>Soda, Salt & Chocolate</b><br>
+            <img src="soda-salt-chocolate.jpg" alt="Soda, Salt & Chocolate" width="100%">
+        `);
+    </script>
+
+</body>
+</html>
